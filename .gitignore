@@ -1,0 +1,90 @@
+# =============================================================
+# SECRETS — never commit these
+# =============================================================
+.env
+*.pem
+*.key
+*.p12
+*.pfx
+
+# =============================================================
+# DATA LAKE — too large for git, use cloud storage in production
+# =============================================================
+data_lake/raw/
+data_lake/silver/
+data_lake/gold/
+
+# Keep the directory structure in git
+!data_lake/raw/.gitkeep
+!data_lake/silver/.gitkeep
+!data_lake/gold/.gitkeep
+
+# =============================================================
+# PYTHON
+# =============================================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+
+# =============================================================
+# SPARK
+# =============================================================
+derby.log
+metastore_db/
+spark-warehouse/
+
+# =============================================================
+# AIRFLOW
+# =============================================================
+airflow/logs/
+airflow/airflow.db
+airflow/*.db
+
+# =============================================================
+# DOCKER
+# =============================================================
+# Don't ignore docker-compose.yml or Dockerfiles
+# But ignore local override files
+docker-compose.override.yml
+
+# =============================================================
+# IDE
+# =============================================================
+.idea/
+.vscode/
+*.iml
+*.suo
+*.user
+.project
+.classpath
+
+# =============================================================
+# OS
+# =============================================================
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,47 @@
+data_lake:
+  base_path: /opt/data_lake
+  raw_path: /opt/data_lake/raw
+  silver_path: /opt/data_lake/silver
+  gold_path: /opt/data_lake/gold
+
+sources:
+  huggingface:
+    base_url: https://huggingface.co/api
+    models_limit: 500
+    timeout: 30
+  github:
+    base_url: https://api.github.com
+    search_queries:
+      - "machine learning"
+      - "deep learning"
+      - "large language model"
+      - "computer vision"
+    results_per_query: 100
+    timeout: 30
+  arxiv:
+    categories:
+      - "cs.AI"
+      - "cs.LG"
+      - "cs.CL"
+      - "cs.CV"
+    max_results: 200
+    timeout: 30
+
+spark:
+  app_name: AIEcosystemPlatform
+  master: spark://spark-master:7077
+  executor_memory: 1g
+  executor_cores: 1
+  driver_memory: 1g
+
+postgres:
+  host: postgres
+  port: 5433
+  database: ai_platform
+  user: platform
+  password: platform123
+  schema: public
+
+pipeline:
+  batch_date_format: "%Y-%m-%d"
+  file_format: parquet

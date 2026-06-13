@@ -1,0 +1,35 @@
+# =============================================================
+# AI Ecosystem Data Platform — Airflow Dependencies
+# Used by: Dockerfile.airflow ONLY
+# Airflow 2.8.x requires pydantic<2 and sqlalchemy<2
+# =============================================================
+
+# -------------------------------------------------------------
+# Airflow is installed separately in the Docker image via:
+#   pip install apache-airflow==2.8.1
+# This file installs the additional project dependencies
+# that are compatible with Airflow's constraints.
+# -------------------------------------------------------------
+
+# Airflow providers
+apache-airflow-providers-apache-spark==4.7.1
+apache-airflow-providers-postgres==5.10.0
+
+# API Ingestion (same as app)
+requests==2.32.3
+arxiv==2.1.3
+
+# Database — must stay on v1.x for Airflow 2.8 compatibility
+psycopg2-binary==2.9.9
+sqlalchemy==1.4.52
+
+# Data processing (used by Spark jobs invoked from DAGs)
+pandas==2.1.4
+pyarrow==14.0.2
+
+# Utilities
+python-dotenv==1.0.0
+pydantic==1.10.13
+pyyaml==6.0.1
+tenacity==8.2.3
+loguru==0.7.2

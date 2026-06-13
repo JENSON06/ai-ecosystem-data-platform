@@ -1,0 +1,231 @@
+2026-06-12 16:58:33 | INFO | ingestion.base | Starting ingestion: github | date=2026-06-12
+2026-06-12 16:58:33 | INFO | ingestion.github | Searching GitHub: 'machine learning'
+2026-06-12 16:58:38 | ERROR | ingestion.github | Failed query='machine learning' page=1: 401 Client Error: Unauthorized for url: https://api.github.com/search/repositories?q=machine+learning+language%3Apython&sort=stars&order=desc&per_page=100&page=1
+2026-06-12 16:58:38 | INFO | ingestion.github | Searching GitHub: 'deep learning'
+2026-06-12 16:58:43 | ERROR | ingestion.github | Failed query='deep learning' page=1: 401 Client Error: Unauthorized for url: https://api.github.com/search/repositories?q=deep+learning+language%3Apython&sort=stars&order=desc&per_page=100&page=1
+2026-06-12 16:58:43 | INFO | ingestion.github | Searching GitHub: 'large language model'
+2026-06-12 16:58:49 | ERROR | ingestion.github | Failed query='large language model' page=1: 401 Client Error: Unauthorized for url: https://api.github.com/search/repositories?q=large+language+model+language%3Apython&sort=stars&order=desc&per_page=100&page=1
+2026-06-12 16:58:49 | INFO | ingestion.github | Searching GitHub: 'computer vision'
+2026-06-12 16:58:54 | ERROR | ingestion.github | Failed query='computer vision' page=1: 401 Client Error: Unauthorized for url: https://api.github.com/search/repositories?q=computer+vision+language%3Apython&sort=stars&order=desc&per_page=100&page=1
+2026-06-12 16:58:54 | INFO | ingestion.github | Searching GitHub: 'natural language processing'
+2026-06-12 16:58:59 | ERROR | ingestion.github | Failed query='natural language processing' page=1: 401 Client Error: Unauthorized for url: https://api.github.com/search/repositories?q=natural+language+processing+language%3Apython&sort=stars&order=desc&per_page=100&page=1
+2026-06-12 16:58:59 | INFO | ingestion.github | GitHub total unique repos fetched: 0
+2026-06-12 16:58:59 | WARNING | ingestion.base | No records fetched from github
+2026-06-12 16:58:59 | INFO | ingestion.base | Starting ingestion: huggingface | date=2026-06-12
+2026-06-12 16:58:59 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-generation
+2026-06-12 16:59:00 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-classification
+2026-06-12 16:59:00 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=token-classification
+2026-06-12 16:59:00 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=question-answering
+2026-06-12 16:59:01 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=translation
+2026-06-12 16:59:01 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=summarization
+2026-06-12 16:59:01 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=image-classification
+2026-06-12 16:59:02 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=object-detection
+2026-06-12 16:59:02 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=automatic-speech-recognition
+2026-06-12 16:59:02 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-to-image
+2026-06-12 16:59:03 | INFO | ingestion.huggingface | HuggingFace total unique models fetched: 500
+2026-06-12 16:59:03 | INFO | ingestion.base | Saved 500 records → data_lake/raw/huggingface/huggingface_2026-06-12.json
+2026-06-12 16:59:03 | INFO | ingestion.base | Ingestion complete: huggingface | 500 records
+2026-06-12 16:59:03 | INFO | ingestion.base | Starting ingestion: arxiv | date=2026-06-12
+2026-06-12 16:59:03 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.AI
+2026-06-12 16:59:03 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.LG
+2026-06-12 16:59:06 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CL
+2026-06-12 16:59:10 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CV
+2026-06-12 16:59:14 | INFO | ingestion.arxiv_client | arXiv total unique papers fetched: 314
+2026-06-12 16:59:14 | INFO | ingestion.base | Saved 314 records → data_lake/raw/arxiv/arxiv_2026-06-12.json
+2026-06-12 16:59:14 | INFO | ingestion.base | Ingestion complete: arxiv | 314 records
+2026-06-12 16:59:14 | INFO | __main__ | ==================================================
+2026-06-12 16:59:14 | INFO | __main__ | INGESTION SUMMARY
+2026-06-12 16:59:14 | INFO | __main__ |   ✅ github: success
+2026-06-12 16:59:14 | INFO | __main__ |   ✅ huggingface: success
+2026-06-12 16:59:14 | INFO | __main__ |   ✅ arxiv: success
+2026-06-12 16:59:14 | INFO | __main__ | ==================================================
+2026-06-12 17:04:32 | INFO | ingestion.base | Starting ingestion: github | date=2026-06-12
+2026-06-12 17:04:32 | INFO | ingestion.github | Searching GitHub: 'machine learning'
+2026-06-12 17:04:37 | ERROR | __main__ | github ingestion failed: GitHub API returned 401 Unauthorized. Set a valid GITHUB_TOKEN in your .env file. Get one at: https://github.com/settings/tokens
+2026-06-12 17:04:37 | INFO | ingestion.base | Starting ingestion: huggingface | date=2026-06-12
+2026-06-12 17:04:37 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-generation
+2026-06-12 17:04:37 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-classification
+2026-06-12 17:04:38 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=token-classification
+2026-06-12 17:04:38 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=question-answering
+2026-06-12 17:04:39 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=translation
+2026-06-12 17:04:39 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=summarization
+2026-06-12 17:04:39 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=image-classification
+2026-06-12 17:04:40 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=object-detection
+2026-06-12 17:04:40 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=automatic-speech-recognition
+2026-06-12 17:04:40 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-to-image
+2026-06-12 17:04:41 | INFO | ingestion.huggingface | HuggingFace total unique models fetched: 500
+2026-06-12 17:04:41 | INFO | ingestion.base | Saved 500 records → data_lake/raw/huggingface/huggingface_2026-06-12.json
+2026-06-12 17:04:41 | INFO | ingestion.base | Ingestion complete: huggingface | 500 records
+2026-06-12 17:04:41 | INFO | ingestion.base | Starting ingestion: arxiv | date=2026-06-12
+2026-06-12 17:04:41 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.AI
+2026-06-12 17:04:41 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.LG
+2026-06-12 17:04:45 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CL
+2026-06-12 17:04:48 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CV
+2026-06-12 17:04:52 | INFO | ingestion.arxiv_client | arXiv total unique papers fetched: 314
+2026-06-12 17:04:52 | INFO | ingestion.base | Saved 314 records → data_lake/raw/arxiv/arxiv_2026-06-12.json
+2026-06-12 17:04:52 | INFO | ingestion.base | Ingestion complete: arxiv | 314 records
+2026-06-12 17:04:52 | INFO | __main__ | ==================================================
+2026-06-12 17:04:52 | INFO | __main__ | INGESTION SUMMARY
+2026-06-12 17:04:52 | INFO | __main__ |   ❌ github: failed
+2026-06-12 17:04:52 | INFO | __main__ |   ✅ huggingface: success
+2026-06-12 17:04:52 | INFO | __main__ |   ✅ arxiv: success
+2026-06-12 17:04:52 | INFO | __main__ | ==================================================
+2026-06-12 17:04:52 | ERROR | __main__ | Failed sources: ['github']
+2026-06-12 17:48:46 | INFO | ingestion.base | Starting ingestion: github | date=2026-06-12
+2026-06-12 17:48:46 | INFO | ingestion.github | Searching GitHub: 'machine learning'
+2026-06-12 17:48:51 | ERROR | __main__ | github ingestion failed: GitHub API returned 401 Unauthorized. Set a valid GITHUB_TOKEN in your .env file. Get one at: https://github.com/settings/tokens
+2026-06-12 17:48:51 | INFO | ingestion.base | Starting ingestion: huggingface | date=2026-06-12
+2026-06-12 17:48:51 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-generation
+2026-06-12 17:48:52 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-classification
+2026-06-12 17:48:52 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=token-classification
+2026-06-12 17:48:53 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=question-answering
+2026-06-12 17:48:53 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=translation
+2026-06-12 17:48:53 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=summarization
+2026-06-12 17:48:53 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=image-classification
+2026-06-12 17:48:54 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=object-detection
+2026-06-12 17:48:54 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=automatic-speech-recognition
+2026-06-12 17:48:55 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-to-image
+2026-06-12 17:48:55 | INFO | ingestion.huggingface | HuggingFace total unique models fetched: 500
+2026-06-12 17:48:55 | INFO | ingestion.base | Saved 500 records → data_lake/raw/huggingface/huggingface_2026-06-12.json
+2026-06-12 17:48:55 | INFO | ingestion.base | Ingestion complete: huggingface | 500 records
+2026-06-12 17:48:55 | INFO | ingestion.base | Starting ingestion: arxiv | date=2026-06-12
+2026-06-12 17:48:55 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.AI
+2026-06-12 17:48:55 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.LG
+2026-06-12 17:48:58 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CL
+2026-06-12 17:49:01 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CV
+2026-06-12 17:49:04 | INFO | ingestion.arxiv_client | arXiv total unique papers fetched: 314
+2026-06-12 17:49:04 | INFO | ingestion.base | Saved 314 records → data_lake/raw/arxiv/arxiv_2026-06-12.json
+2026-06-12 17:49:04 | INFO | ingestion.base | Ingestion complete: arxiv | 314 records
+2026-06-12 17:49:04 | INFO | __main__ | ==================================================
+2026-06-12 17:49:04 | INFO | __main__ | INGESTION SUMMARY
+2026-06-12 17:49:04 | INFO | __main__ |   ❌ github: failed
+2026-06-12 17:49:04 | INFO | __main__ |   ✅ huggingface: success
+2026-06-12 17:49:04 | INFO | __main__ |   ✅ arxiv: success
+2026-06-12 17:49:04 | INFO | __main__ | ==================================================
+2026-06-12 17:49:04 | ERROR | __main__ | Failed sources: ['github']
+2026-06-12 18:29:20 | INFO | ingestion.base | Starting ingestion: github | date=2026-06-12
+2026-06-12 18:29:20 | INFO | ingestion.github | Searching GitHub: 'machine learning'
+2026-06-12 18:29:25 | ERROR | __main__ | github ingestion failed: GitHub API returned 401 Unauthorized. Set a valid GITHUB_TOKEN in your .env file. Get one at: https://github.com/settings/tokens
+2026-06-12 18:29:25 | INFO | ingestion.base | Starting ingestion: huggingface | date=2026-06-12
+2026-06-12 18:29:25 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-generation
+2026-06-12 18:29:25 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-classification
+2026-06-12 18:29:25 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=token-classification
+2026-06-12 18:29:26 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=question-answering
+2026-06-12 18:29:26 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=translation
+2026-06-12 18:29:27 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=summarization
+2026-06-12 18:29:27 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=image-classification
+2026-06-12 18:29:27 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=object-detection
+2026-06-12 18:29:27 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=automatic-speech-recognition
+2026-06-12 18:29:28 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-to-image
+2026-06-12 18:29:29 | INFO | ingestion.huggingface | HuggingFace total unique models fetched: 500
+2026-06-12 18:29:29 | INFO | ingestion.base | Saved 500 records → data_lake/raw/huggingface/huggingface_2026-06-12.json
+2026-06-12 18:29:29 | INFO | ingestion.base | Ingestion complete: huggingface | 500 records
+2026-06-12 18:29:29 | INFO | ingestion.base | Starting ingestion: arxiv | date=2026-06-12
+2026-06-12 18:29:29 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.AI
+2026-06-12 18:29:29 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.LG
+2026-06-12 18:29:33 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CL
+2026-06-12 18:29:37 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CV
+2026-06-12 18:29:40 | INFO | ingestion.arxiv_client | arXiv total unique papers fetched: 314
+2026-06-12 18:29:40 | INFO | ingestion.base | Saved 314 records → data_lake/raw/arxiv/arxiv_2026-06-12.json
+2026-06-12 18:29:40 | INFO | ingestion.base | Ingestion complete: arxiv | 314 records
+2026-06-12 18:29:40 | INFO | __main__ | ==================================================
+2026-06-12 18:29:40 | INFO | __main__ | INGESTION SUMMARY
+2026-06-12 18:29:40 | INFO | __main__ |   ❌ github: failed
+2026-06-12 18:29:40 | INFO | __main__ |   ✅ huggingface: success
+2026-06-12 18:29:40 | INFO | __main__ |   ✅ arxiv: success
+2026-06-12 18:29:40 | INFO | __main__ | ==================================================
+2026-06-12 18:29:40 | ERROR | __main__ | Failed sources: ['github']
+2026-06-12 18:30:17 | INFO | ingestion.base | Starting ingestion: github | date=2026-06-12
+2026-06-12 18:30:17 | INFO | ingestion.github | Searching GitHub: 'machine learning'
+2026-06-12 18:30:22 | ERROR | __main__ | github ingestion failed: GitHub API returned 401 Unauthorized. Set a valid GITHUB_TOKEN in your .env file. Get one at: https://github.com/settings/tokens
+2026-06-12 18:30:22 | INFO | ingestion.base | Starting ingestion: huggingface | date=2026-06-12
+2026-06-12 18:30:22 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-generation
+2026-06-12 18:30:23 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-classification
+2026-06-12 18:30:23 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=token-classification
+2026-06-12 18:30:23 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=question-answering
+2026-06-12 18:30:24 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=translation
+2026-06-12 18:30:24 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=summarization
+2026-06-12 18:30:24 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=image-classification
+2026-06-12 18:30:25 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=object-detection
+2026-06-12 18:30:25 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=automatic-speech-recognition
+2026-06-12 18:30:26 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-to-image
+2026-06-12 18:30:26 | INFO | ingestion.huggingface | HuggingFace total unique models fetched: 500
+2026-06-12 18:30:26 | INFO | ingestion.base | Saved 500 records → data_lake/raw/huggingface/huggingface_2026-06-12.json
+2026-06-12 18:30:26 | INFO | ingestion.base | Ingestion complete: huggingface | 500 records
+2026-06-12 18:30:26 | INFO | ingestion.base | Starting ingestion: arxiv | date=2026-06-12
+2026-06-12 18:30:26 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.AI
+2026-06-12 18:30:26 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.LG
+2026-06-12 18:32:03 | INFO | ingestion.base | Starting ingestion: github | date=2026-06-12
+2026-06-12 18:32:03 | INFO | ingestion.github | Searching GitHub: 'machine learning'
+2026-06-12 18:32:18 | INFO | ingestion.github | Searching GitHub: 'deep learning'
+2026-06-12 18:32:33 | INFO | ingestion.github | Searching GitHub: 'large language model'
+2026-06-12 18:32:48 | INFO | ingestion.github | Searching GitHub: 'computer vision'
+2026-06-12 18:32:55 | INFO | ingestion.base | Starting ingestion: github | date=2026-06-12
+2026-06-12 18:32:55 | INFO | ingestion.github | Searching GitHub: 'machine learning'
+2026-06-12 18:33:04 | INFO | ingestion.github | Searching GitHub: 'natural language processing'
+2026-06-12 18:33:12 | INFO | ingestion.github | Searching GitHub: 'deep learning'
+2026-06-12 18:33:19 | INFO | ingestion.github | GitHub total unique repos fetched: 1468
+2026-06-12 18:33:19 | INFO | ingestion.base | Saved 1468 records → data_lake/raw/github/github_2026-06-12.json
+2026-06-12 18:33:19 | INFO | ingestion.base | Ingestion complete: github | 1468 records
+2026-06-12 18:33:19 | INFO | ingestion.base | Starting ingestion: huggingface | date=2026-06-12
+2026-06-12 18:33:19 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-generation
+2026-06-12 18:33:19 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-classification
+2026-06-12 18:33:20 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=token-classification
+2026-06-12 18:33:20 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=question-answering
+2026-06-12 18:33:21 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=translation
+2026-06-12 18:33:21 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=summarization
+2026-06-12 18:33:21 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=image-classification
+2026-06-12 18:33:22 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=object-detection
+2026-06-12 18:33:22 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=automatic-speech-recognition
+2026-06-12 18:33:22 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-to-image
+2026-06-12 18:33:23 | INFO | ingestion.huggingface | HuggingFace total unique models fetched: 500
+2026-06-12 18:33:23 | INFO | ingestion.base | Saved 500 records → data_lake/raw/huggingface/huggingface_2026-06-12.json
+2026-06-12 18:33:23 | INFO | ingestion.base | Ingestion complete: huggingface | 500 records
+2026-06-12 18:33:23 | INFO | ingestion.base | Starting ingestion: arxiv | date=2026-06-12
+2026-06-12 18:33:23 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.AI
+2026-06-12 18:33:23 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.LG
+2026-06-12 18:33:27 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CL
+2026-06-12 18:33:27 | INFO | ingestion.github | Searching GitHub: 'large language model'
+2026-06-12 18:33:30 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CV
+2026-06-12 18:33:34 | INFO | ingestion.arxiv_client | arXiv total unique papers fetched: 314
+2026-06-12 18:33:34 | INFO | ingestion.base | Saved 314 records → data_lake/raw/arxiv/arxiv_2026-06-12.json
+2026-06-12 18:33:34 | INFO | ingestion.base | Ingestion complete: arxiv | 314 records
+2026-06-12 18:33:34 | INFO | __main__ | ==================================================
+2026-06-12 18:33:34 | INFO | __main__ | INGESTION SUMMARY
+2026-06-12 18:33:34 | INFO | __main__ |   ✅ github: success
+2026-06-12 18:33:34 | INFO | __main__ |   ✅ huggingface: success
+2026-06-12 18:33:34 | INFO | __main__ |   ✅ arxiv: success
+2026-06-12 18:33:34 | INFO | __main__ | ==================================================
+2026-06-12 18:33:44 | INFO | ingestion.github | Searching GitHub: 'computer vision'
+2026-06-12 18:34:00 | INFO | ingestion.github | Searching GitHub: 'natural language processing'
+2026-06-12 18:34:15 | INFO | ingestion.github | GitHub total unique repos fetched: 1468
+2026-06-12 18:34:15 | INFO | ingestion.base | Saved 1468 records → data_lake/raw/github/github_2026-06-12.json
+2026-06-12 18:34:15 | INFO | ingestion.base | Ingestion complete: github | 1468 records
+2026-06-12 18:34:15 | INFO | ingestion.base | Starting ingestion: huggingface | date=2026-06-12
+2026-06-12 18:34:15 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-generation
+2026-06-12 18:34:16 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-classification
+2026-06-12 18:34:16 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=token-classification
+2026-06-12 18:34:16 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=question-answering
+2026-06-12 18:34:17 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=translation
+2026-06-12 18:34:17 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=summarization
+2026-06-12 18:34:18 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=image-classification
+2026-06-12 18:34:18 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=object-detection
+2026-06-12 18:34:18 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=automatic-speech-recognition
+2026-06-12 18:34:19 | INFO | ingestion.huggingface | Fetching HuggingFace models: pipeline=text-to-image
+2026-06-12 18:34:19 | INFO | ingestion.huggingface | HuggingFace total unique models fetched: 500
+2026-06-12 18:34:19 | INFO | ingestion.base | Saved 500 records → data_lake/raw/huggingface/huggingface_2026-06-12.json
+2026-06-12 18:34:19 | INFO | ingestion.base | Ingestion complete: huggingface | 500 records
+2026-06-12 18:34:19 | INFO | ingestion.base | Starting ingestion: arxiv | date=2026-06-12
+2026-06-12 18:34:19 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.AI
+2026-06-12 18:34:20 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.LG
+2026-06-12 18:34:23 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CL
+2026-06-12 18:34:26 | INFO | ingestion.arxiv_client | Fetching arXiv papers: category=cs.CV
+2026-06-12 18:34:29 | INFO | ingestion.arxiv_client | arXiv total unique papers fetched: 314
+2026-06-12 18:34:29 | INFO | ingestion.base | Saved 314 records → data_lake/raw/arxiv/arxiv_2026-06-12.json
+2026-06-12 18:34:29 | INFO | ingestion.base | Ingestion complete: arxiv | 314 records
+2026-06-12 18:34:29 | INFO | __main__ | ==================================================
+2026-06-12 18:34:29 | INFO | __main__ | INGESTION SUMMARY
+2026-06-12 18:34:29 | INFO | __main__ |   ✅ github: success
+2026-06-12 18:34:29 | INFO | __main__ |   ✅ huggingface: success
+2026-06-12 18:34:29 | INFO | __main__ |   ✅ arxiv: success
+2026-06-12 18:34:29 | INFO | __main__ | ==================================================

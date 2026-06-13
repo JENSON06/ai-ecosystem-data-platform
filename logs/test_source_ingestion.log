@@ -1,0 +1,225 @@
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 2 records → /tmp/pytest-of-jenson/pytest-0/test_creates_json_file0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_json_structure0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_json_structure0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_returns_file_path_string0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_returns_file_path_string0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_returns_file_path_string0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_overwrites_existing_file0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_overwrites_existing_file0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_overwrites_existing_file0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_overwrites_existing_file0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 2 records → /tmp/pytest-of-jenson/pytest-0/test_overwrites_existing_file0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 2 records → /tmp/pytest-of-jenson/pytest-0/test_overwrites_existing_file0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 2 records → /tmp/pytest-of-jenson/pytest-0/test_overwrites_existing_file0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 2 records → /tmp/pytest-of-jenson/pytest-0/test_overwrites_existing_file0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | WARNING | ingestion.base | No records fetched from test_source
+2026-06-12 22:52:33 | WARNING | ingestion.base | No records fetched from test_source
+2026-06-12 22:52:33 | WARNING | ingestion.base | No records fetched from test_source
+2026-06-12 22:52:33 | WARNING | ingestion.base | No records fetched from test_source
+2026-06-12 22:52:33 | WARNING | ingestion.base | No records fetched from test_source
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_returns_file_path_when_re0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_returns_file_path_when_re0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_returns_file_path_when_re0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_returns_file_path_when_re0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_returns_file_path_when_re0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_returns_file_path_when_re0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Starting ingestion: test_source | date=2026-06-12
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_saved_file_contains_corre0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_saved_file_contains_corre0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_saved_file_contains_corre0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_saved_file_contains_corre0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_saved_file_contains_corre0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_saved_file_contains_corre0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Saved 1 records → /tmp/pytest-of-jenson/pytest-0/test_saved_file_contains_corre0/test_source/test_source_2026-06-12.json
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:33 | INFO | ingestion.base | Ingestion complete: test_source | 1 records
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 100 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 100 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 100 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 100 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 100 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 100 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 100 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 100 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 100 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 50 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ huggingface validation passed | 60 records | huggingface_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ arxiv validation failed: Raw file not found: /tmp/pytest-of-jenson/pytest-0/test_returns_false_when_one_so0/arxiv/arxiv_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ arxiv validation failed: Raw file not found: /tmp/pytest-of-jenson/pytest-0/test_returns_false_when_one_so0/arxiv/arxiv_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ arxiv validation failed: Raw file not found: /tmp/pytest-of-jenson/pytest-0/test_returns_false_when_one_so0/arxiv/arxiv_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ arxiv validation failed: Raw file not found: /tmp/pytest-of-jenson/pytest-0/test_returns_false_when_one_so0/arxiv/arxiv_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ arxiv validation failed: Raw file not found: /tmp/pytest-of-jenson/pytest-0/test_returns_false_when_one_so0/arxiv/arxiv_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ arxiv validation failed: Raw file not found: /tmp/pytest-of-jenson/pytest-0/test_returns_false_when_one_so0/arxiv/arxiv_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ arxiv validation failed: Raw file not found: /tmp/pytest-of-jenson/pytest-0/test_returns_false_when_one_so0/arxiv/arxiv_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ arxiv validation failed: Raw file not found: /tmp/pytest-of-jenson/pytest-0/test_returns_false_when_one_so0/arxiv/arxiv_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ arxiv validation failed: Raw file not found: /tmp/pytest-of-jenson/pytest-0/test_returns_false_when_one_so0/arxiv/arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ github validation passed | 60 records | github_2024-01-15.json
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ huggingface validation failed: huggingface has only 5 records, expected >= 50
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ huggingface validation failed: huggingface has only 5 records, expected >= 50
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ huggingface validation failed: huggingface has only 5 records, expected >= 50
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ huggingface validation failed: huggingface has only 5 records, expected >= 50
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ huggingface validation failed: huggingface has only 5 records, expected >= 50
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ huggingface validation failed: huggingface has only 5 records, expected >= 50
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ huggingface validation failed: huggingface has only 5 records, expected >= 50
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ huggingface validation failed: huggingface has only 5 records, expected >= 50
+2026-06-12 22:52:37 | ERROR | ingestion.validate | ❌ huggingface validation failed: huggingface has only 5 records, expected >= 50
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | ingestion.validate | ✅ arxiv validation passed | 60 records | arxiv_2024-01-15.json
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 4 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 4 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 4 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 4 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 4 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 4 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 4 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 4 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 4 rows from top_repos
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from kpis
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from kpis
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from kpis
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from kpis
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from kpis
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from kpis
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from kpis
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from kpis
+2026-06-12 22:52:37 | INFO | postgres.loader | Read 1 rows from kpis

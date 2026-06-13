@@ -1,0 +1,45 @@
+# Secrets
+.env
+*.pem
+*.key
+
+# Data lake — too large, mounted as volumes in docker-compose
+data_lake/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Spark local files
+derby.log
+metastore_db/
+spark-warehouse/
+
+# Airflow local DB
+airflow/airflow.db
+airflow/*.db
+airflow/logs/
+
+# Git
+.git/
+.gitignore
+
+# Docs and tests — not needed at runtime
+docs/
+tests/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/*.log

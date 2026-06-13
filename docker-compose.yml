@@ -1,0 +1,190 @@
+version: "3.8"
+
+# All services share this network so they can reach each other by service name
+# e.g. Airflow reaches Spark at spark://spark-master:7077
+networks:
+  ai-platform:
+    driver: bridge
+
+# Named volumes persist data between container restarts
+# Without this, your PostgreSQL data disappears every time you run docker-compose down
+volumes:
+  postgres_data:
+  airflow_logs:
+
+# -----------------------------------------------------------------
+# COMMON AIRFLOW CONFIG — reused by both airflow services
+# -----------------------------------------------------------------
+x-airflow-common: &airflow-common
+  build:
+    context: .
+    dockerfile: docker/Dockerfile.airflow
+  environment:
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+    AIRFLOW__CORE__FERNET_KEY: "81HqDtbqAywKSOumSha3BhWNOdQ26slT6K0YaZeZyPs="
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "true"
+    SPARK_MASTER_URL: spark://spark-master:7077
+    DATA_LAKE_PATH: /opt/data_lake
+    POSTGRES_HOST: postgres
+    POSTGRES_PORT: 5432
+    POSTGRES_DB: ai_platform
+    POSTGRES_USER: platform
+    POSTGRES_PASSWORD: platform123
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/plugins:/opt/airflow/plugins
+    - airflow_logs:/opt/airflow/logs
+    - ./spark_jobs:/opt/spark_jobs
+    - ./ingestion:/opt/ingestion
+    - ./configs:/opt/configs
+    - ./data_lake:/opt/data_lake
+  networks:
+    - ai-platform
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+services:
+
+  # ---------------------------------------------------------------
+  # POSTGRESQL — serves as both Airflow metadata DB and our
+  # final serving layer for the Streamlit dashboard
+  # Two databases are created: `airflow` and `ai_platform`
+  # ---------------------------------------------------------------
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # This init script runs on first startup to create our app database
+      - ./docker/postgres-init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - ai-platform
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+
+  # ---------------------------------------------------------------
+  # SPARK MASTER — the cluster coordinator
+  # It receives job submissions and distributes work to workers
+  # UI available at http://localhost:8080
+  # ---------------------------------------------------------------
+  spark-master:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.spark
+    environment:
+      SPARK_MODE: master
+      SPARK_MASTER_HOST: spark-master
+      SPARK_RPC_AUTHENTICATION_ENABLED: "no"
+      SPARK_RPC_ENCRYPTION_ENABLED: "no"
+    ports:
+      - "8080:8080"   # Spark Master Web UI
+      - "7077:7077"   # Spark job submission port
+    volumes:
+      - ./spark_jobs:/opt/spark_jobs
+      - ./data_lake:/opt/data_lake
+      - ./configs:/opt/configs
+    networks:
+      - ai-platform
+
+  # ---------------------------------------------------------------
+  # SPARK WORKER — executes actual computation
+  # In production you'd have many workers; here we use 2 for learning
+  # Each worker gets 2 CPU cores and 2GB RAM (realistic laptop limits)
+  # ---------------------------------------------------------------
+  spark-worker:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.spark
+    environment:
+      SPARK_MODE: worker
+      SPARK_MASTER_URL: spark://spark-master:7077
+      SPARK_WORKER_MEMORY: 2G
+      SPARK_WORKER_CORES: 2
+      SPARK_RPC_AUTHENTICATION_ENABLED: "no"
+      SPARK_RPC_ENCRYPTION_ENABLED: "no"
+    volumes:
+      - ./spark_jobs:/opt/spark_jobs
+      - ./data_lake:/opt/data_lake
+    networks:
+      - ai-platform
+    depends_on:
+      - spark-master
+    deploy:
+      replicas: 2   # Start 2 workers to simulate a real cluster
+
+  # ---------------------------------------------------------------
+  # AIRFLOW INIT — runs once to set up the DB schema and admin user
+  # This is a best practice: separate init from the running service
+  # ---------------------------------------------------------------
+  airflow-init:
+    <<: *airflow-common
+    command: >
+      bash -c "
+        airflow db migrate &&
+        airflow users create
+          --username admin
+          --password admin
+          --firstname Admin
+          --lastname User
+          --role Admin
+          --email admin@aiplatform.local
+      "
+    restart: "no"
+
+  # ---------------------------------------------------------------
+  # AIRFLOW WEBSERVER — the UI for managing DAGs
+  # UI available at http://localhost:8081
+  # ---------------------------------------------------------------
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8081:8080"
+    restart: unless-stopped
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+  # ---------------------------------------------------------------
+  # AIRFLOW SCHEDULER — monitors and triggers DAG runs
+  # ---------------------------------------------------------------
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    restart: unless-stopped
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+  # ---------------------------------------------------------------
+  # STREAMLIT — dashboard, built and served last
+  # UI available at http://localhost:8501
+  # ---------------------------------------------------------------
+  streamlit:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ai_platform
+      POSTGRES_USER: platform
+      POSTGRES_PASSWORD: platform123
+    networks:
+      - ai-platform
+    depends_on:
+      - postgres
