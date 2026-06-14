@@ -133,6 +133,171 @@ python postgres/loader.py
 
 The loader uses a truncate-then-insert strategy — Gold tables are fully recomputed daily, so a clean reload guarantees consistency with no stale rows.
 
+## How the Pipeline Works End to End
+
+### Full Pipeline Flow
+
+```
+You (or Airflow scheduler at 06:00 UTC)
+        │
+        ▼
+ ingestion/run_ingestion.py
+        ├── GitHubIngester      → data_lake/raw/github/github_2026-06-13.json
+        ├── HuggingFaceIngester → data_lake/raw/huggingface/huggingface_2026-06-13.json
+        └── ArxivIngester       → data_lake/raw/arxiv/arxiv_2026-06-13.json
+                │
+                ▼
+        ingestion/validate.py   (quality gate — fails fast if data is bad)
+                │
+                ▼
+        spark_jobs/run_silver.py
+                ├── data_lake/silver/github/batch_date=2026-06-13/
+                ├── data_lake/silver/huggingface/batch_date=2026-06-13/
+                └── data_lake/silver/arxiv/batch_date=2026-06-13/
+                        │
+                        ▼
+                spark_jobs/run_gold.py
+                        ├── data_lake/gold/github_trends/top_repos/
+                        ├── data_lake/gold/ai_models/top_models/
+                        ├── data_lake/gold/research_trends/
+                        └── data_lake/gold/executive_metrics/kpis/
+                                │
+                                ▼
+                        postgres/loader.py
+                                ├── TRUNCATE + reload fact_github_trends
+                                ├── TRUNCATE + reload fact_model_metrics
+                                ├── TRUNCATE + reload fact_research_trends
+                                └── TRUNCATE + reload fact_executive_kpis
+                                        │
+                                        ▼
+                                PostgreSQL ai_platform database
+                                        │
+                                        ▼
+                                Streamlit Dashboard
+```
+
+### How Each Layer Handles New Data
+
+| Layer | Behavior | Why |
+|---|---|---|
+| Raw JSON | New file per day — old files kept forever | Full audit trail, re-run without hitting APIs |
+| Silver Parquet | New partition per day — old partitions kept | Enables historical trend analysis |
+| Gold Parquet | Fully overwritten on every run | Always reflects latest metrics |
+| PostgreSQL | Truncated + reloaded every run | Dashboard always shows fresh, consistent data |
+
+### How Each Layer Knows What to Read
+
+**Ingester** saves to a dated filename:
+```
+data_lake/raw/github/github_2026-06-13.json
+```
+
+**Spark Silver** reads all files in the folder with a wildcard:
+```python
+spark.read.json("data_lake/raw/github/*.json")
+# Automatically picks up every daily file
+```
+
+**Spark Gold** reads all Silver partitions at once:
+```python
+spark.read.parquet("data_lake/silver/github")
+# Spark reads all batch_date= folders automatically
+```
+
+**Loader** reads Gold Parquet and writes to PostgreSQL:
+```python
+df = pq.read_table(gold_path).to_pandas()
+# TRUNCATE table, then COPY all rows in one fast operation
+```
+
+### Loose Coupling — Why This Architecture Scales
+
+Each layer only knows about the layer directly above it:
+- The loader does not know how Gold was computed — it just reads Parquet files
+- Gold does not know how Silver was cleaned — it just reads Parquet files
+- Silver does not know what API the data came from — it just reads JSON files
+
+This means you can swap out the GitHub API client, fix a Silver bug, or change a Gold metric — and only that one layer needs to change.
+
+---
+
+## Scheduling and Backfilling
+
+### Daily Scheduling (Automatic)
+
+The Airflow DAG `ai_platform_daily_pipeline` runs every day at 06:00 UTC:
+
+```
+Airflow scheduler wakes up at 06:00 UTC
+        │
+        ▼
+Creates a DAG Run for today's date
+        │
+        ▼
+Runs: ingest → validate → silver → gold → load postgres
+        │
+        ▼
+New data available in dashboard
+```
+
+The schedule is defined as a cron expression in the DAG:
+```python
+schedule="0 6 * * *"   # every day at 06:00 UTC
+```
+
+`max_active_runs=1` prevents two daily runs from overlapping if one runs slow.
+
+### Backfilling — Reprocessing Past Data
+
+**Scenario 1 — You fixed a bug in Silver or Gold logic:**
+
+You do NOT need to re-fetch from the APIs. The raw JSON files already exist.
+Trigger the reprocess DAG which skips ingestion entirely:
+
+```bash
+# From Airflow UI: trigger ai_platform_reprocess manually
+# Or from terminal:
+airflow dags trigger ai_platform_reprocess
+```
+
+This runs: Silver → Gold → PostgreSQL using existing raw files.
+
+**Scenario 2 — Pipeline missed a day (server was down):**
+
+```bash
+# Backfill specific date range
+airflow dags backfill \
+  --start-date 2026-06-10 \
+  --end-date 2026-06-12 \
+  ai_platform_daily_pipeline
+```
+
+This re-runs the full pipeline for each missed date in order.
+
+`catchup=False` in our DAG means Airflow will NOT automatically backfill missed runs when you first deploy — you control backfills manually.
+
+### The Three DAGs
+
+| DAG | Schedule | Purpose |
+|---|---|---|
+| `ai_platform_daily_pipeline` | Daily 06:00 UTC | Full pipeline — ingest → silver → gold → postgres |
+| `ai_platform_reprocess` | Manual only | Reprocess Silver → Gold → PostgreSQL from existing raw files |
+| `ai_platform_health_check` | Every hour | Check PostgreSQL connectivity, data freshness, row counts |
+
+### Retry Logic
+
+Every task is configured with:
+```python
+retries=2                        # retry up to 2 times
+retry_delay=timedelta(minutes=5) # wait 5 minutes between retries
+retry_exponential_backoff=True   # 5min → 10min on successive retries
+execution_timeout=timedelta(hours=1)  # kill task if it hangs > 1 hour
+```
+
+If all retries are exhausted, Airflow marks the task as failed and stops the downstream pipeline — bad data never reaches PostgreSQL.
+
+---
+
 ## Running the Pipeline Manually
 
 ```bash
