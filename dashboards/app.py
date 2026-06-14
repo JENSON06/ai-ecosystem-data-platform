@@ -114,7 +114,7 @@ if not db_ok:
 # ----------------------------------------------------------------
 # Header
 # ----------------------------------------------------------------
-st.title("AI AI Ecosystem Data Platform")
+st.title("AI Ecosystem Data Platform")
 batch_date = kpis.get("batch_date", "—")
 st.caption(f"Data as of: **{batch_date}**  ·  Refreshes every 5 minutes")
 
