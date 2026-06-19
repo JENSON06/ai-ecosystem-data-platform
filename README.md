@@ -20,6 +20,24 @@ Public APIs (GitHub · HuggingFace · arXiv)
     Streamlit  (interactive dashboard)
 ```
 
+## Dashboard Screenshots
+
+### Executive KPI Dashboard
+![KPI Dashboard](Output/KPI_Dashboard.png)
+
+### GitHub
+![GitHub Graph](Output/Github_Graph.png)
+![GitHub Trend](Output/Github_trend.png)
+
+### HuggingFace
+![HuggingFace Model Graph](Output/HuggingFaceModel_Graph.png)
+![HuggingFace Models](Output/HuggingFaceModel.png)
+
+### arXiv Research
+![arXiv Trend](Output/arxiv_trend.png)
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |

@@ -123,9 +123,9 @@ st.caption(f"Data as of: **{batch_date}**  ·  Refreshes every 5 minutes")
 # ----------------------------------------------------------------
 tab_exec, tab_github, tab_hf, tab_arxiv = st.tabs([
     "[KPI] Executive KPIs",
-    "GitHub GitHub",
-    "HuggingFace HuggingFace",
-    "arXiv arXiv Research",
+    "GitHub ",
+    "HuggingFace ",
+    "arXiv arXiv ",
 ])
 
 
